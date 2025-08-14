@@ -5,7 +5,7 @@ export default function Career() {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const API = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  const API = import.meta.env.VITE_API_URL || "https://lkcs.onrender.com";
 
   useEffect(() => {
     // Clear success timeout on unmount to avoid setState on unmounted
