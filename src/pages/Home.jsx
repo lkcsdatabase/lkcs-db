@@ -32,7 +32,30 @@ const FEATURES = [
     desc: "Art, music, drama, debates, and cultural events to nurture creativity and overall personality development."
   }
 ];
+function App() {
+  const testConnection = async () => {
+    try {
+      console.log('Testing API:', import.meta.env.VITE_API_URL);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/health`);
+      const data = await response.json();
+      console.log('API Response:', data);
+      alert('Check console for API response!');
+    } catch (error) {
+      console.error('API Error:', error);
+      alert('API connection failed - check console');
+    }
+  };
 
+  return (
+    <div>
+      {/* Add this temporary button */}
+      <button onClick={testConnection} style={{position: 'fixed', top: '10px', right: '10px', zIndex: 1000}}>
+        Test API
+      </button>
+      {/* your existing content */}
+    </div>
+  );
+}
 
 // ---- Gallery Preview Component (latest 4 images from API) ----
 function HomeGalleryPreview() {
