@@ -154,11 +154,11 @@ export default function Navbar() {
             </Link>
 
             <Link
-              to="/houses"
+              to="/career"
               onClick={() => setIsMobileMenuOpen(false)}
               className="block px-4 py-3 text-green-700 font-semibold hover:bg-white hover:text-green-800 rounded-lg transition-all duration-300"
             >
-              🏛️ Houses
+              🏛️ Careers
             </Link>
 
             <div className="border-t border-green-200 pt-2 mt-2">
