@@ -8,7 +8,7 @@ import Testimonials from "./Testimonials";
 const API =
   import.meta.env.VITE_API_URL ||
   import.meta.env.VITE_API_BASE ||
-  "http://localhost:5000";
+  "https://lkcs.onrender.com";
 
 const FEATURES = [
   {
