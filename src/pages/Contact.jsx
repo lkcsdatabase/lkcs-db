@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function Contact() {
-  const API = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  const API = import.meta.env.VITE_API_URL || "https://lkcs.onrender.com";
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
