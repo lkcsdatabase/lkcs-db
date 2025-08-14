@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from "react";
 
 export default function Enquiries() {
-  const API = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  const API = import.meta.env.VITE_API_URL || "https://lkcs.onrender.com";
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
