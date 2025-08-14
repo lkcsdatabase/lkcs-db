@@ -12,7 +12,7 @@ export default function GalleryAdmin() {
     import.meta.env.VITE_API_URL ||
     import.meta.env.VITE_API_BASE ||
     window.__API__ ||
-    "http://localhost:5000";
+    "https://lkcs.onrender.com";
 
   const validateFile = (file) => {
     const maxSize = 10 * 1024 * 1024; // 10MB limit
