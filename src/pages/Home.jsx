@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import logo from "../assets/logo.png";
 import NewsTicker from "../components/NewsTicker";
 import FAQ from "./FAQ";
@@ -10,25 +11,25 @@ const API =
   "http://localhost:5000";
 
 const FEATURES = [
-  { 
-    icon: "⚽", 
-    title: "Sports Excellence", 
-    desc: "State-of-the-art facilities for cricket, football, athletics, and indoor games to encourage physical fitness and teamwork." 
+  {
+    icon: "⚽",
+    title: "Sports Excellence",
+    desc: "State-of-the-art facilities for cricket, football, athletics, and indoor games to encourage physical fitness and teamwork."
   },
-  { 
-    icon: "💻", 
-    title: "Smart Classrooms", 
-    desc: "Interactive digital boards, e-learning tools, and modern teaching technology for enhanced learning experiences." 
+  {
+    icon: "💻",
+    title: "Smart Classrooms",
+    desc: "Interactive digital boards, e-learning tools, and modern teaching technology for enhanced learning experiences."
   },
-  { 
-    icon: "🛡️", 
-    title: "Advanced Security", 
-    desc: "24/7 CCTV surveillance, secured campus entry, and trained staff ensuring safety for all students." 
+  {
+    icon: "🛡️",
+    title: "Advanced Security",
+    desc: "24/7 CCTV surveillance, secured campus entry, and trained staff ensuring safety for all students."
   },
-  { 
-    icon: "🎭", 
-    title: "Co-Curricular Activities", 
-    desc: "Art, music, drama, debates, and cultural events to nurture creativity and overall personality development." 
+  {
+    icon: "🎭",
+    title: "Co-Curricular Activities",
+    desc: "Art, music, drama, debates, and cultural events to nurture creativity and overall personality development."
   }
 ];
 
@@ -162,8 +163,8 @@ function EventCalendar({ events, onDateSelect, selectedDate }) {
   const daysInMonth = lastDay.getDate();
   const startingDayOfWeek = firstDay.getDay();
 
-  const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  const dayNames = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   const calendarDays = [];
   for (let i = 0; i < startingDayOfWeek; i++) calendarDays.push(null);
@@ -218,15 +219,14 @@ function EventCalendar({ events, onDateSelect, selectedDate }) {
             {day ? (
               <button
                 onClick={() => clickDate(day)}
-                className={`w-full h-full rounded-lg text-sm font-medium transition-all duration-200 relative ${
-                  isSelected(day)
+                className={`w-full h-full rounded-lg text-sm font-medium transition-all duration-200 relative ${isSelected(day)
                     ? "bg-emerald-600 text-white shadow-md"
                     : isToday(day)
-                    ? "bg-amber-100 text-amber-800 border-2 border-amber-400"
-                    : hasEvents(day)
-                    ? "bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200"
-                    : "hover:bg-slate-100 text-slate-700"
-                }`}
+                      ? "bg-amber-100 text-amber-800 border-2 border-amber-400"
+                      : hasEvents(day)
+                        ? "bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200"
+                        : "hover:bg-slate-100 text-slate-700"
+                  }`}
               >
                 {day}
                 {hasEvents(day) && !isSelected(day) && (
@@ -263,7 +263,7 @@ function HomeEventsPreview() {
     const mm = String(date.getMonth() + 1).padStart(2, "0");
     const dd = String(date.getDate()).padStart(2, "0");
     return `${yyyy}-${mm}-${dd}`;
-    }
+  }
 
   async function loadEvents() {
     try {
@@ -437,7 +437,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a href="#academics" className="px-10 py-4 bg-white/15 backdrop-blur-sm border-2 border-white/30 rounded-full text-lg font-semibold hover:bg-white hover:text-emerald-900 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
-              Explore Academics 
+              Explore Academics
             </a>
             <a href="#about" className="px-10 py-4 bg-amber-600/80 backdrop-blur-sm border-2 border-amber-500 rounded-full text-lg font-semibold hover:bg-amber-500 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
               Learn More
@@ -657,12 +657,12 @@ export default function Home() {
             Whether you're interested in admissions, academics, or extracurricular activities, our team is ready to assist you and your family.
           </p>
           <div className="flex justify-center">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="px-8 py-4 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-emerald-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </section>
