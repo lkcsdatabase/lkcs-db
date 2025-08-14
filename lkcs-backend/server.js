@@ -15,7 +15,8 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 const MONGO_URI = process.env.MONGO_URI;
-const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "lkcs-alpha.vercel.app ";
+// const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "lkcs-alpha.vercel.app";
+const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "https://lkcs-alpha.vercel.app";
 
 if (!MONGO_URI) {
   console.error("❌ MONGO_URI is missing in .env");
@@ -62,6 +63,9 @@ app.use(
   })
 );
 
+
+
+
 // Health
 app.get("/health", async (_req, res) => {
   try {
@@ -75,6 +79,19 @@ app.get("/health", async (_req, res) => {
     res.status(500).json({ ok: false, error: error.message });
   }
 });
+
+// Root route - ADD THIS
+app.get("/", (req, res) => {
+  res.json({
+    message: "LKCS API Server is running!",
+    status: "healthy",
+    database: mongoose.connection.readyState === 1 ? "connected" : "disconnected",
+    endpoints: ["/health", "/api/enquiries", "/api/applications", "/api/gallery", "/api/events"],
+    timestamp: new Date().toISOString()
+  });
+});
+
+
 
 // Routes
 app.use("/api/enquiries", enquiries);
