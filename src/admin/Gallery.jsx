@@ -19,7 +19,7 @@ export default function GalleryAdmin() {
     const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
 
     if (file.size > maxSize) {
-      throw new Error(`File ${file.name} is too large. Maximum size is 10MB.`);
+      throw new Error(`File ${file.name} is too large. Maximum size is 50MB.`);
     }
 
     if (!allowedTypes.includes(file.type)) {
@@ -288,7 +288,7 @@ export default function GalleryAdmin() {
                       <p className="text-lg font-semibold text-gray-700 mb-2">
                         {busy ? `Uploading... ${Math.round(uploadProgress)}%` : "Click to upload images"}
                       </p>
-                      <p className="text-sm text-gray-500">Support for JPG, PNG, GIF, WebP files (Max 10MB each)</p>
+                      <p className="text-sm text-gray-500">Support for JPG, PNG, GIF, WebP files (Max 50MB each)</p>
                       {busy && uploadProgress > 0 && (
                         <div className="mt-4 bg-gray-200 rounded-full h-2">
                           <div
