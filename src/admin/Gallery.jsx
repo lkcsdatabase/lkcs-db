@@ -15,7 +15,7 @@ export default function GalleryAdmin() {
     "https://lkcs.onrender.com";
 
   const validateFile = (file) => {
-    const maxSize = 10 * 1024 * 1024; // 10MB limit
+    const maxSize = 50 * 1024 * 1024; 
     const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
 
     if (file.size > maxSize) {
