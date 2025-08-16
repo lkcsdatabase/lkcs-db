@@ -1,7 +1,7 @@
 const TESTIMONIALS = [
   {
     name: "Aarav Sharma",
-    relation: "Alumnus",
+    relation: "Alumnus 2025",
     text: "LKCS shaped my academic journey and personal growth. The teachers go above and beyond, and the house system made learning fun and competitive!",
   },
   {
